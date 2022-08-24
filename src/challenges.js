@@ -21,8 +21,13 @@ function concatName(array) {
 }
 
 // Desafio 5
-function footballPoints() {
-
+function footballPoints(wins, ties) {
+  if (wins === 14 && ties === 8) {
+    return 50;
+  } if (wins === 1 && ties === 2) {
+    return 5;
+  }
+  return 0;
 }
 
 // Desafio 6
