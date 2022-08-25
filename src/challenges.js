@@ -41,31 +41,32 @@ function highestCount(array) {
   }
   for (let index2 = 0; index2 < array.length; index2 += 1) {
     if (numeroMaior === array[index2]) {
-    repeticoes += 1;
+      repeticoes += 1;
     }
   }
   return repeticoes;
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(cat1, cat2, mouse) {
+  
+  if (cat2 < cat1) {
+    return 'cat1';
+  }
+  return 'cat2';
 }
 
 // Desafio 8
 function fizzBuzz(array) {
   const novaArray = [];
   for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0) {
-      novaArray.push( 'fizz');
-    }
-    if (array[index] % 5 === 0) {
-      novaArray.push('buzz');
-    }
-    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+    if ((array[index] % 3) === 0 && (array[index] % 5) === 0) {
       novaArray.push('fizzBuzz');
-    } 
-    if (array[index] % 3 !== 0 && array[index] % 5 !== 0) {
+    } else if ((array[index] % 3) === 0) {
+      novaArray.push('fizz');
+    } else if ((array[index] % 5) === 0) {
+      novaArray.push('buzz');
+    } else {
       novaArray.push('bug!');
     }
   }
@@ -73,16 +74,38 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+// Documentação ocnsultada --- https://www.w3schools.com/jsref/jsref_replace.asp
+function encode(string) {
+  for (let index = 0; index < string.length; index += 1) {
+    let trocaNumero = '';
+    trocaNumero = string.replace('a', '1');
+    trocaNumero = string.replace('e', '2');
+    trocaNumero = string.replace('i', '3');
+    trocaNumero = string.replace('o', '4');
+    trocaNumero = string.replace('u', '5');
+    return trocaNumero;
+  }
 }
-function decode() {
-  // seu código aqui
+
+function decode(string) {
+  for (let index = 0; index < string.length; index += 1) {
+    let trocaVogal = '';
+    trocaVogal = string.replace('a', '1');
+    trocaVogal = string.replace('e', '2');
+    trocaVogal = string.replace('i', '3');
+    trocaVogal = string.replace('o', '4');
+    trocaVogal = string.replace('u', '5');
+    return trocaVogal;
+  }
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, string) {
+  let listaTecnica = {
+    tech: array,
+    nome: string,
+  };
+  return listaTecnica;
 }
 
 module.exports = {
