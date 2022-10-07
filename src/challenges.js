@@ -106,7 +106,7 @@ function techList(array, string) {
     return 'Vazio!';
   }
   const arraySort = array.sort();
-  return arraySort.map((index) => ({ tech: index, nome: string }));
+  return arraySort.map((index) => ({ tech: index, name: string }));
 }
 
 module.exports = {
