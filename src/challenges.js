@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 function compareTrue(valor1, valor2) {
   return valor1 && valor2;
@@ -101,14 +102,11 @@ function decode(string) {
 
 // Desafio 10
 function techList(array, string) {
-  let listaTecnica = {
-    tech: [],
-    nome: '',
-  };
   if (array.length === 0 || string.length === 0) {
-    return 'vazio';
+    return 'Vazio!';
   }
-  return listaTecnica;
+  const arraySort = array.sort();
+  return arraySort.map((index) => ({ tech: index, nome: string }));
 }
 
 module.exports = {
