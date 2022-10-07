@@ -17,7 +17,7 @@ function splitSentence(string) {
 function concatName(array) {
   const inicio = array[0];
   const fim = array[array.length - 1];
-  return fim + ", " + inicio;
+  return `${fim}, ${inicio}`;
 }
 
 // Desafio 5
@@ -48,19 +48,20 @@ function highestCount(array) {
 }
 
 // Desafio 7
+// Documentação consultada --- https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math
 function catAndMouse(mouse, cat1, cat2) {
-  distanciaCat1 = Math.abs(mouse - cat1);
-  distanciaCat2 = Math.abs(mouse - cat2);
+  const distanciaCat1 = Math.abs(mouse - cat1);
+  const distanciaCat2 = Math.abs(mouse - cat2);
   if (distanciaCat1 === distanciaCat2) {
     return 'os gatos trombam e o rato foge';
-  } else if (distanciaCat1 < distanciaCat2) {
-    return 'cat1';
-  } else {
-    return 'cat2';
   }
+  if (distanciaCat1 < distanciaCat2) {
+    return 'cat1';
+  } return 'cat2';
 }
 
 // Desafio 8
+// eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 function fizzBuzz(array) {
   const novaArray = [];
   for (let index = 0; index < array.length; index += 1) {
@@ -78,29 +79,24 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-// Documentação ocnsultada --- https://www.w3schools.com/jsref/jsref_replace.asp
 function encode(string) {
-  for (let index = 0; index < string.length; index += 1) {
-    let trocaNumero = '';
-    trocaNumero = string.replace('a', '1');
-    trocaNumero = string.replace('e', '2');
-    trocaNumero = string.replace('i', '3');
-    trocaNumero = string.replace('o', '4');
-    trocaNumero = string.replace('u', '5');
-    return trocaNumero;
-  }
+  let palavra = string.replaceAll('a', '1');
+  palavra = palavra.replaceAll('e', '2');
+  palavra = palavra.replaceAll('i', '3');
+  palavra = palavra.replaceAll('o', '4');
+  palavra = palavra.replaceAll('u', '5');
+
+  return palavra;
 }
 
 function decode(string) {
-  for (let index = 0; index < string.length; index += 1) {
-    let trocaVogal = '';
-    trocaVogal = string.replace('a', '1');
-    trocaVogal = string.replace('e', '2');
-    trocaVogal = string.replace('i', '3');
-    trocaVogal = string.replace('o', '4');
-    trocaVogal = string.replace('u', '5');
-    return trocaVogal;
-  }
+  let palavra = string.replaceAll('1', 'a');
+  palavra = palavra.replaceAll('2', 'e');
+  palavra = palavra.replaceAll('3', 'i');
+  palavra = palavra.replaceAll('4', 'o');
+  palavra = palavra.replaceAll('5', 'u');
+
+  return palavra;
 }
 
 // Desafio 10
