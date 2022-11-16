@@ -7,7 +7,9 @@ function generatePhoneNumber(array) {
     repeat[e] = (repeat[e] || 0) + 1;
   });
   const verify = repeat.some((number) => number >= 3);
+
   if (verifyLength) return 'Array com tamanho incorreto.';
+
   if (varifyNumbers || verify) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
@@ -19,8 +21,11 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  const verifySum = (Math.abs(lineA) < (lineB + lineC)
+    && Math.abs(lineB) < (lineA + lineC)
+    && Math.abs(lineC) < (lineA + lineB));
+  return verifySum;
 }
 
 // Desafio 13
