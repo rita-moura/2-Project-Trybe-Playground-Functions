@@ -29,8 +29,15 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  const regex = /\d+/g;
+  const number = string.match(regex);
+  let sumNumber = 0;
+  for (let index = 0; index < number.length; index += 1) {
+    sumNumber += Number(number[index]);
+  }
+  if (sumNumber === 1) return `${sumNumber} copo de água`;
+  return `${sumNumber} copos de água`;
 }
 
 module.exports = {
